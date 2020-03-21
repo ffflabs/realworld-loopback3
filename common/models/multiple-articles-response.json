@@ -1,0 +1,24 @@
+{
+  "name": "MultipleArticlesResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "articles": {
+      "type": [
+        "Article"
+      ],
+      "required": true
+    },
+    "articlesCount": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

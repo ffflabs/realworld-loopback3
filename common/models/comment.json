@@ -1,0 +1,48 @@
+{
+  "name": "Comment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "createdAt": {
+      "type": "string",
+      "required": true,
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "required": true,
+      "format": "date-time"
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "article_slug":{
+      "type": "string",
+      "required": true
+    
+    }
+  },
+  "validations": [],
+  "relations": {
+"author":{
+  "type":"belongsTo",
+  "model":"user",
+  "foreignKey":"username" 
+},
+"article":{
+  "type":"belongsTo",
+  "model":"Article",
+  "foreignKey":"article_slug" 
+}
+  },
+  "acls": [],
+  "methods": {}
+}

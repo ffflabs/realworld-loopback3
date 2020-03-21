@@ -1,0 +1,79 @@
+{
+  "name": "Profile",
+  "base": "User",
+  "plural":"users",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+      "username": {
+      "type": "String",
+      "id": 1,
+      "required": true
+    },
+
+    "bio": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "following": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+     "favorites": {
+      "type": "hasMany",
+      "model": "Article",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+    "following": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+     "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+    "articles": {
+      "type": "hasMany",
+      "model": "Article",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+ "user": {
+      "type": "hasOne",
+      "model": "user",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

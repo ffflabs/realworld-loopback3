@@ -1,0 +1,32 @@
+{
+  "name": "ProfileResponse",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profile": {
+      "type": "Profile",
+      "required": true,
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "following": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

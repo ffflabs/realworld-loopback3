@@ -1,0 +1,86 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+        "username": {
+      "type": "String",
+      "id": 1,
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "token": {
+      "type": "string",
+      "required": false,
+      "default":""
+    },
+   
+    "bio": {
+      "type": "string",
+      "required": false,
+      "default":""
+    },
+    "image": {
+      "type": "string",
+      "required": false,
+      "default":"https://via.placeholder.com/600/80b1d3/000"
+    }
+  },
+  "validations": [],
+  "relations": {
+    
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "token",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+     "favorites": {
+      "type": "hasMany",
+      "model": "Article",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+    "following": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+     "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    },
+    "articles": {
+      "type": "hasMany",
+      "model": "Article",
+      "foreignKey": "username",
+      "options": {
+        "nestRemoting": false,
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,34 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "public",
+    ".sessions",
+    ".tokens",
+    "logs",
+    "SQL",
+    "public_apidocs",
+    "apidoc_template",
+    "static",
+    "client",
+    "docs",
+    "views/shortcuts"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node"
+  },
+  "events": {
+    "restart": "echo -e '\"App restarted due to changes in :\n'$FILENAME'\" '"
+  },
+  "watch": ["server/", "common/models/", "config", "common/constants/"],
+  "env": {
+    "DEBUG": "realworld-loopback,realworld,realworld-loopback3:*,loopback:user,swagger:*",
+    "NODE_ENV": "development",
+    "PORT": 3111,
+    "VERBOSE": 1
+    
+  },
+  "ext": "js json"
+}

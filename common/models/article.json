@@ -1,0 +1,72 @@
+{
+  "name": "Article",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "tagList": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "createdAt": {
+      "type": "string",
+      "required": true,
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "required": true,
+      "format": "date-time"
+    },
+    "favorited": {
+      "type": "boolean",
+      "required": true
+    },
+    "favoritesCount": {
+      "type": "number",
+      "required": true
+    },
+    "author": {
+      "type": "Profile",
+      "required": true,
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "following": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

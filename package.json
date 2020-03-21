@@ -1,0 +1,43 @@
+{
+  "name": "realworld-loopback",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "nodemon",
+    "posttest": "npm run lint && npm audit"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "debug": "^4.1.1",
+    "helmet": "^3.10.0",
+    "jsonwebtoken": "^8.5.1",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-jwt": "^1.0.2",
+    "loopback-jwt-advanced": "^1.1.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chalk": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-loopback": "^8.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "realworld-loopback"
+}

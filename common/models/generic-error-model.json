@@ -1,0 +1,26 @@
+{
+  "name": "GenericErrorModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "errors": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "body": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
